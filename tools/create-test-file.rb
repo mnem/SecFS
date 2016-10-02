@@ -136,7 +136,7 @@ def int_to_bytes(i, bits, endianess)
         raise "Unsupported bit size: #{bits}"
     end
 
-    return packed.unpack "C"
+    return packed.unpack "C*"
 end
 
 def create_integer_data(pattern, size)
