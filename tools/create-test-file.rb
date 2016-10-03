@@ -17,14 +17,14 @@ def normalise_string_arg(value, possibilities)
     return normalised
 end
 
-OPTIONS = {:bits => 32, :endianess => :little}
+OPTIONS = {:bits => 32, :endianess => :little, :bytesize => -1}
 PARSER = OptionParser.new do |opt|
     opt.version = "1.0.0"
     opt.release = "beta"
     opt.banner = "Usage: #{opt.program_name} [OPTIONS]"
 
-    opt.on("-s", "--size SIZE_IN_BYTES", Integer, "Size, in bytes, of the file to create.") do |value|
-        OPTIONS[:bytesize] = value >= 0 ? value : 0
+    opt.on("-s", "--size SIZE_IN_BYTES", Integer, "Size, in bytes, of the file to create. -1 indicates that it should assume the size of the pattern. Defaults to #{OPTIONS[:bytesize]}") do |value|
+        OPTIONS[:bytesize] = value >= 0 ? value : -1
     end
 
     opt.on("-t", "--type TYPE", String, "Type of data to generate. One of: CHARACTER, STRING, INTEGER") do |value|
@@ -86,14 +86,23 @@ def create_character_data(pattern, size)
         pattern = pattern.bytes
     end
 
-    pattern *= (size.to_f/pattern.length).ceil
-    pattern[0...size]
+    if size >= 0
+        pattern *= (size.to_f/pattern.length).ceil
+        return pattern[0...size]
+    else
+        return pattern
+    end
 end
 
 def create_string_data(pattern, size)
     pattern = create_character_data(pattern, size)
-    pattern[size - 1] = 0 if size > 0
-    return pattern
+    if size >= 0
+        pattern[pattern.length - 1] = 0 if pattern.length > 0
+        return pattern
+    else
+        pattern << 0
+        return pattern
+    end
 end
 
 def string_to_integer(string)
@@ -155,14 +164,17 @@ def create_integer_data(pattern, size)
     pattern.each { |i| out << int_to_bytes(i, OPTIONS[:bits], OPTIONS[:endianess]) }
     out.flatten!
 
-    require 'pp'
-    pp out
-
-    out *= (size.to_f/out.length).ceil
-    out[0...size]
+    if size >= 0
+        out *= (size.to_f/out.length).ceil
+        return out[0...size]
+    else
+        return out
+    end
 end
 
 def create_data(type, pattern, size)
+    return [] if size == 0
+
     case type
     when :character
         return create_character_data(pattern, size)
