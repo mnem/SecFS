@@ -45,7 +45,9 @@ def create_index_name(file_path, full_path)
     pack_name = File.join OPTIONS[:root], file_path
     abort_with_message "Filename too long. Must be <= 1024 characters: #{pack_name}" if pack_name.length > 1024
 
-    {:pack_name => pack_name, :file_name => full_path}
+    abort_with_message "Cannot read file: #{full_path}" if not File.readable? full_path
+
+    {:pack_name => pack_name.encode(Encoding::UTF_8), :file_name => full_path}
 end
 
 def create_index_names(files)
@@ -88,5 +90,114 @@ end
 
 FILES = create_index_names ARGV
 
-puts FILES
+if FILES.length == 0 
+    abort_with_message "No files found to pack."
+end
 
+# Write the filename index
+PACK_INDEX_NAME = "#{OPTIONS[:pack_name]}.sfsi"
+File.open PACK_INDEX_NAME, 'wb' do |f|
+    # Write the number of records the file will contain
+    record_count = [FILES.length].pack('Q')
+    f.write record_count
+
+    # Write the lengths of each record
+    record_lengths = []    
+
+    # Initial offset is record_count + (num record lengths) + (num record offsets) in bytes
+    current_offset = 8 + (FILES.length * 8) + (FILES.length * 8)
+    offsets = []
+    FILES.each do |r|
+        record_size = r[:pack_name].bytesize
+        record_lengths << record_size
+
+        offsets << current_offset
+
+        # Update the offset based on the record
+        # size + padding to maintain the specified
+        # alignment. In this case, we don't
+        # care about alignment for strings
+        current_offset += record_size
+    end
+
+    # Lengths
+    f.write record_lengths.pack('Q*')
+
+    # Offsets
+    f.write offsets.pack('Q*')
+
+    # Now write all the data
+    current_index = 0
+    FILES.each do |r|
+        # Check that the offset is what we expect
+        raise "Unexpected offset when writing #{r[:pack_name]}. Found #{f.pos}, expected #{offsets[current_index]}" if f.pos != offsets[current_index]
+
+        f.write r[:pack_name].bytes.pack("C*")
+
+        # Next
+        current_index += 1
+
+
+        # in_f = File.open r[:file_name], 'rb'
+        # current_offset += File.copy_stream in_f, f
+        # File.close in_f
+
+        # # Check that the offset is what we expect
+        # raise "Unexpected offset when writing #{file_name}. Found #{current_offset}, expected #{offset_after_record[current_index]}" if current_offset != offset_after_record[current_index]
+
+        # current_index += 1
+    end
+end
+
+# Write the data pack
+PACK_DATA_NAME = "#{OPTIONS[:pack_name]}.sfsd"
+File.open PACK_DATA_NAME, 'wb' do |f|
+    # Write the number of records the file will contain
+    record_count = [FILES.length].pack('Q')
+    f.write record_count
+
+    # Write the lengths of each record
+    record_lengths = []    
+
+    # Initial offset is record_count + (num record lengths) + (num record offsets) in bytes
+    current_offset = 8 + (FILES.length * 8) + (FILES.length * 8)
+    offsets = []
+    FILES.each do |r|
+        record_size = File.size r[:file_name]
+        record_lengths << record_size
+
+        offsets << current_offset
+
+        # Update the offset based on the record
+        # size + padding to maintain the specified
+        # alignment. Hardcoding 8 byte alignment
+        current_offset += record_size
+        while current_offset % 8 != 0
+            current_offset += 1
+        end
+    end
+
+    # Lengths
+    f.write record_lengths.pack('Q*')
+
+    # Offsets
+    f.write offsets.pack('Q*')
+
+    # Now write all the data
+    current_index = 0
+    FILES.each do |r|
+        # Check that the offset is what we expect
+        raise "Unexpected offset when writing #{r[:pack_name]}. Found #{f.pos}, expected #{offsets[current_index]}" if f.pos != offsets[current_index]
+
+        in_f = File.open r[:file_name], 'rb'
+        File.copy_stream in_f, f
+        in_f.close
+
+        while f.pos % 8 != 0
+            f.write [0].pack('C')
+        end
+
+        # Next
+        current_index += 1
+    end
+end
