@@ -9,17 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var imageView: UIImageView!
 
+    fileprivate let fs = SecFSFileManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        guard let data = fs?.dataForFilename(filename: "/screen.png"), let image = UIImage(data: data) else {
+            return
+        }
+        
+        imageView.image = image
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

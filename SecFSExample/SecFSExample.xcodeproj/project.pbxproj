@@ -13,6 +13,8 @@
 		BBA239561DAC358400E1843C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBA239551DAC358400E1843C /* Assets.xcassets */; };
 		BBA239591DAC358400E1843C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA239571DAC358400E1843C /* LaunchScreen.storyboard */; };
 		BBA239641DAC358400E1843C /* SecFSExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA239631DAC358400E1843C /* SecFSExampleTests.swift */; };
+		BBA239721DAC361600E1843C /* secfs.c in Sources */ = {isa = PBXBuildFile; fileRef = BBA239701DAC361600E1843C /* secfs.c */; };
+		BBA239751DAC4D8300E1843C /* SecFSFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA239741DAC4D8300E1843C /* SecFSFileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,10 @@
 		BBA2395F1DAC358400E1843C /* SecFSExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecFSExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA239631DAC358400E1843C /* SecFSExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecFSExampleTests.swift; sourceTree = "<group>"; };
 		BBA239651DAC358400E1843C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBA2396F1DAC361600E1843C /* SecFSExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SecFSExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		BBA239701DAC361600E1843C /* secfs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = secfs.c; path = ../../SecFSReader/secfs.c; sourceTree = "<group>"; };
+		BBA239711DAC361600E1843C /* secfs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = secfs.h; path = ../../SecFSReader/secfs.h; sourceTree = "<group>"; };
+		BBA239741DAC4D8300E1843C /* SecFSFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecFSFileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,9 @@
 				BBA239551DAC358400E1843C /* Assets.xcassets */,
 				BBA239571DAC358400E1843C /* LaunchScreen.storyboard */,
 				BBA2395A1DAC358400E1843C /* Info.plist */,
+				BBA239731DAC362400E1843C /* SecFSReader */,
+				BBA2396F1DAC361600E1843C /* SecFSExample-Bridging-Header.h */,
+				BBA239741DAC4D8300E1843C /* SecFSFileManager.swift */,
 			);
 			path = SecFSExample;
 			sourceTree = "<group>";
@@ -94,6 +103,15 @@
 				BBA239651DAC358400E1843C /* Info.plist */,
 			);
 			path = SecFSExampleTests;
+			sourceTree = "<group>";
+		};
+		BBA239731DAC362400E1843C /* SecFSReader */ = {
+			isa = PBXGroup;
+			children = (
+				BBA239701DAC361600E1843C /* secfs.c */,
+				BBA239711DAC361600E1843C /* secfs.h */,
+			);
+			name = SecFSReader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +165,7 @@
 					BBA2394A1DAC358400E1843C = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = A8NKHWJDUL;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					BBA2395E1DAC358400E1843C = {
@@ -201,6 +220,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBA239751DAC4D8300E1843C /* SecFSFileManager.swift in Sources */,
+				BBA239721DAC361600E1843C /* secfs.c in Sources */,
 				BBA239511DAC358400E1843C /* ViewController.swift in Sources */,
 				BBA2394F1DAC358400E1843C /* AppDelegate.swift in Sources */,
 			);
@@ -341,11 +362,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = A8NKHWJDUL;
 				INFOPLIST_FILE = SecFSExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					sfsi,
+					../test2.sfsi,
+					"-sectcreate",
+					__TEXT,
+					sfsd,
+					../test2.sfsd,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.noiseandheat.SecFSExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SecFSExample/SecFSExample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -354,11 +388,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = A8NKHWJDUL;
 				INFOPLIST_FILE = SecFSExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					sfsi,
+					../test2.sfsi,
+					"-sectcreate",
+					__TEXT,
+					sfsd,
+					../test2.sfsd,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.noiseandheat.SecFSExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SecFSExample/SecFSExample-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

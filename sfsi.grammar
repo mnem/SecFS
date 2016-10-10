@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ufwb version="1.17">
-    <grammar name="SFSI grammar" start="id:1" author="David Wagner" email="mnem@noiseandheat.com" fileextension="sfsi">
+    <grammar name="SFSI grammar" start="id:3" author="David Wagner" email="mnem@noiseandheat.com" fileextension="sfsi">
         <description>Grammar for SFSI files</description>
-        <structure name="SFSI file" id="1" length="0" encoding="ISO_8859-1:1987" endian="little" signed="no">
-            <number name="element_count" id="2" type="integer" length="8"/>
-            <structure name="element_lengths" id="65">
-                <number name="element_length" id="3" fillcolor="72FA78" repeatmin="element_count" repeatmax="element_count" type="integer" length="8"/>
+        <structure name="SFSI file" id="3" length="0" encoding="ISO_8859-1:1987" endian="little" signed="no">
+            <number name="element_count" id="4" type="integer" length="8"/>
+            <structure name="element_lengths" id="5">
+                <number name="element_length" id="6" fillcolor="72FA78" repeatmin="element_count" repeatmax="element_count" type="integer" length="8"/>
             </structure>
-            <structure name="element_offsets" id="67">
-                <number name="element_offset" id="5" fillcolor="73FDFF" repeatmin="element_count" repeatmax="element_count" type="integer" length="8" display="hex"/>
+            <structure name="element_offsets" id="8">
+                <number name="element_offset" id="9" fillcolor="73FDFF" repeatmin="element_count" repeatmax="element_count" type="integer" length="8"/>
             </structure>
-            <structure name="elements" id="69">
-                <string name="element" id="7" type="fixed-length" length="0" encoding="UTF-8"/>
+            <structure name="elements" id="11">
+                <string name="element" id="12" type="fixed-length" length="remaining" encoding="UTF-8"/>
             </structure>
         </structure>
     </grammar>
