@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BBA2394F1DAC358400E1843C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA2394E1DAC358400E1843C /* AppDelegate.swift */; };
+		BBA239511DAC358400E1843C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA239501DAC358400E1843C /* ViewController.swift */; };
+		BBA239541DAC358400E1843C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA239521DAC358400E1843C /* Main.storyboard */; };
+		BBA239561DAC358400E1843C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBA239551DAC358400E1843C /* Assets.xcassets */; };
+		BBA239591DAC358400E1843C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA239571DAC358400E1843C /* LaunchScreen.storyboard */; };
+		BBA239641DAC358400E1843C /* SecFSExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA239631DAC358400E1843C /* SecFSExampleTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BBA239601DAC358400E1843C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBA239431DAC358400E1843C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBA2394A1DAC358400E1843C;
+			remoteInfo = SecFSExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BBA2394B1DAC358400E1843C /* SecFSExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecFSExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBA2394E1DAC358400E1843C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BBA239501DAC358400E1843C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BBA239531DAC358400E1843C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BBA239551DAC358400E1843C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BBA239581DAC358400E1843C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BBA2395A1DAC358400E1843C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBA2395F1DAC358400E1843C /* SecFSExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecFSExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBA239631DAC358400E1843C /* SecFSExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecFSExampleTests.swift; sourceTree = "<group>"; };
+		BBA239651DAC358400E1843C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BBA239481DAC358400E1843C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBA2395C1DAC358400E1843C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BBA239421DAC358400E1843C = {
+			isa = PBXGroup;
+			children = (
+				BBA2394D1DAC358400E1843C /* SecFSExample */,
+				BBA239621DAC358400E1843C /* SecFSExampleTests */,
+				BBA2394C1DAC358400E1843C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BBA2394C1DAC358400E1843C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBA2394B1DAC358400E1843C /* SecFSExample.app */,
+				BBA2395F1DAC358400E1843C /* SecFSExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBA2394D1DAC358400E1843C /* SecFSExample */ = {
+			isa = PBXGroup;
+			children = (
+				BBA2394E1DAC358400E1843C /* AppDelegate.swift */,
+				BBA239501DAC358400E1843C /* ViewController.swift */,
+				BBA239521DAC358400E1843C /* Main.storyboard */,
+				BBA239551DAC358400E1843C /* Assets.xcassets */,
+				BBA239571DAC358400E1843C /* LaunchScreen.storyboard */,
+				BBA2395A1DAC358400E1843C /* Info.plist */,
+			);
+			path = SecFSExample;
+			sourceTree = "<group>";
+		};
+		BBA239621DAC358400E1843C /* SecFSExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				BBA239631DAC358400E1843C /* SecFSExampleTests.swift */,
+				BBA239651DAC358400E1843C /* Info.plist */,
+			);
+			path = SecFSExampleTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BBA2394A1DAC358400E1843C /* SecFSExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBA239681DAC358400E1843C /* Build configuration list for PBXNativeTarget "SecFSExample" */;
+			buildPhases = (
+				BBA239471DAC358400E1843C /* Sources */,
+				BBA239481DAC358400E1843C /* Frameworks */,
+				BBA239491DAC358400E1843C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SecFSExample;
+			productName = SecFSExample;
+			productReference = BBA2394B1DAC358400E1843C /* SecFSExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BBA2395E1DAC358400E1843C /* SecFSExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBA2396B1DAC358400E1843C /* Build configuration list for PBXNativeTarget "SecFSExampleTests" */;
+			buildPhases = (
+				BBA2395B1DAC358400E1843C /* Sources */,
+				BBA2395C1DAC358400E1843C /* Frameworks */,
+				BBA2395D1DAC358400E1843C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBA239611DAC358400E1843C /* PBXTargetDependency */,
+			);
+			name = SecFSExampleTests;
+			productName = SecFSExampleTests;
+			productReference = BBA2395F1DAC358400E1843C /* SecFSExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BBA239431DAC358400E1843C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "David Wagner";
+				TargetAttributes = {
+					BBA2394A1DAC358400E1843C = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = A8NKHWJDUL;
+						ProvisioningStyle = Automatic;
+					};
+					BBA2395E1DAC358400E1843C = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = A8NKHWJDUL;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BBA2394A1DAC358400E1843C;
+					};
+				};
+			};
+			buildConfigurationList = BBA239461DAC358400E1843C /* Build configuration list for PBXProject "SecFSExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BBA239421DAC358400E1843C;
+			productRefGroup = BBA2394C1DAC358400E1843C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBA2394A1DAC358400E1843C /* SecFSExample */,
+				BBA2395E1DAC358400E1843C /* SecFSExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BBA239491DAC358400E1843C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBA239591DAC358400E1843C /* LaunchScreen.storyboard in Resources */,
+				BBA239561DAC358400E1843C /* Assets.xcassets in Resources */,
+				BBA239541DAC358400E1843C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBA2395D1DAC358400E1843C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BBA239471DAC358400E1843C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBA239511DAC358400E1843C /* ViewController.swift in Sources */,
+				BBA2394F1DAC358400E1843C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBA2395B1DAC358400E1843C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBA239641DAC358400E1843C /* SecFSExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BBA239611DAC358400E1843C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBA2394A1DAC358400E1843C /* SecFSExample */;
+			targetProxy = BBA239601DAC358400E1843C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BBA239521DAC358400E1843C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBA239531DAC358400E1843C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BBA239571DAC358400E1843C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBA239581DAC358400E1843C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BBA239661DAC358400E1843C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BBA239671DAC358400E1843C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BBA239691DAC358400E1843C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A8NKHWJDUL;
+				INFOPLIST_FILE = SecFSExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.noiseandheat.SecFSExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BBA2396A1DAC358400E1843C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A8NKHWJDUL;
+				INFOPLIST_FILE = SecFSExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.noiseandheat.SecFSExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		BBA2396C1DAC358400E1843C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = A8NKHWJDUL;
+				INFOPLIST_FILE = SecFSExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.noiseandheat.SecFSExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SecFSExample.app/SecFSExample";
+			};
+			name = Debug;
+		};
+		BBA2396D1DAC358400E1843C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = A8NKHWJDUL;
+				INFOPLIST_FILE = SecFSExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.noiseandheat.SecFSExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SecFSExample.app/SecFSExample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BBA239461DAC358400E1843C /* Build configuration list for PBXProject "SecFSExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBA239661DAC358400E1843C /* Debug */,
+				BBA239671DAC358400E1843C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBA239681DAC358400E1843C /* Build configuration list for PBXNativeTarget "SecFSExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBA239691DAC358400E1843C /* Debug */,
+				BBA2396A1DAC358400E1843C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BBA2396B1DAC358400E1843C /* Build configuration list for PBXNativeTarget "SecFSExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBA2396C1DAC358400E1843C /* Debug */,
+				BBA2396D1DAC358400E1843C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BBA239431DAC358400E1843C /* Project object */;
+}
